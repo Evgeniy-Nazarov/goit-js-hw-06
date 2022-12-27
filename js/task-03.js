@@ -12,3 +12,20 @@ const images = [
     alt: 'Group of Horses Running',
   },
 ];
+
+const galleryRef = document.getElementsByClassName("gallery");
+
+const imagesList = images.map(image => `<li><img src="${image.url}" alt="${image.alt}" width="400" height="300"></li>`);
+
+
+document.styleSheets[0].insertRule(".gallery {display: flex; flex-direction: column; align-items: center; justify-content: center;}", 0);
+document.styleSheets[0].insertRule(".gallery li {list-style: none;}", 1);
+document.styleSheets[0].insertRule(".gallery img {border: 1px solid black;}", 2);
+document.styleSheets[0].insertRule(".gallery img:hover {transform: scale(1.1); transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);}", 3);
+document.styleSheets[0].insertRule(".gallery img:focus {outline: 3px solid #FFD54F;}", 4);
+document.styleSheets[0].insertRule(".gallery img:focus:hover {transform: scale(1.1); transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);}", 5);
+document.styleSheets[0].insertRule(".gallery img:focus:hover {outline: 3px solid #FFD54F;}", 6);
+document.styleSheets[0].insertRule(".gallery img:focus:hover {transform: scale(1.1); transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);}", 7);
+  document.styleSheets[0].insertRule(".gallery img:focus:hover {outline: 3px solid #FFD54F;}", 8);
+
+galleryRef[0].insertAdjacentHTML("afterbegin", imagesList.join(""));
